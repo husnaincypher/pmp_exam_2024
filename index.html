@@ -37,13 +37,16 @@
         </section>
         <section id="quiz-cards">
             <h2>Quiz Cards</h2>
-            <div class="card" onclick="flipCard(this)">
-                <div class="card-front">
+            <div class="quiz-card" onclick="checkAnswer(this, 'Develop Project Charter')">
+                <div class="quiz-question">
                     <p>What is the first process in Project Integration Management?</p>
                 </div>
-                <div class="card-back">
-                    <p>Develop Project Charter</p>
+                <div class="quiz-options">
+                    <button onclick="chooseAnswer(this, 'Initiate Project')">Initiate Project</button>
+                    <button onclick="chooseAnswer(this, 'Develop Project Charter')">Develop Project Charter</button>
+                    <button onclick="chooseAnswer(this, 'Define Scope')">Define Scope</button>
                 </div>
+                <div class="quiz-result"></div>
             </div>
         </section>
         <section id="notes">

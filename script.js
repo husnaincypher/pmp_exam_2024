@@ -22,27 +22,17 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
-// Functionality for progress tracker (example implementation)
-const progressTracker = document.getElementById('progress-tracker');
-progressTracker.innerHTML = "<p>Your progress will be displayed here.</p>";
+// Functionality for progress tracker
+let progress = 0;
+const progressBar = document.getElementById('progress');
+const progressText = document.getElementById('progress-text');
 
-// Example API request function
-async function fetchPMPInfo() {
-    const apiKey = 'your_api_key'; // Replace with your actual API key
-    const apiUrl = 'https://api.example.com/pmp-data'; // Replace with the actual API endpoint
-
-    try {
-        const response = await fetch(apiUrl, {
-            headers: {
-                'Authorization': `Bearer ${apiKey}`
-            }
-        });
-        const data = await response.json();
-        // Process and display the data on your website
-        console.log(data); // Example: log the fetched data
-    } catch (error) {
-        console.error('Error fetching data:', error);
-    }
+function updateProgress() {
+    progress += 10; // Increment by 10% for demo purposes
+    if (progress > 100) progress = 100;
+    progressBar.style.width = progress + '%';
+    progressText.innerText = `${progress}% Complete`;
 }
 
-fetchPMPInfo();
+// Simulate progress update for demo purposes
+setInterval(updateProgress, 1000); // Update progress every second

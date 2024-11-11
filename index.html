@@ -37,7 +37,7 @@
         </section>
         <section id="quiz-cards">
             <h2>Quiz Cards</h2>
-            <div class="card">
+            <div class="card" onclick="flipCard(this)">
                 <div class="card-front">
                     <p>What is the first process in Project Integration Management?</p>
                 </div>
@@ -52,7 +52,10 @@
         </section>
         <section id="progress-tracker">
             <h2>Progress Tracker</h2>
-            <p>Your progress will be displayed here.</p>
+            <div id="progress-bar">
+                <div id="progress"></div>
+            </div>
+            <p id="progress-text">0% Complete</p>
         </section>
     </main>
     <footer>

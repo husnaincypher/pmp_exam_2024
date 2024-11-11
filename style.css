@@ -2,7 +2,7 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(to right, #ffecd2 0%, #fcb69f 100%);
+    background-color: #add8e6; /* Light blue background */
     color: #333;
 }
 
@@ -60,6 +60,7 @@ h2 {
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     perspective: 1000px;
     position: relative;
+    cursor: pointer;
 }
 
 #quiz-cards .card-front, #quiz-cards .card-back {
@@ -81,11 +82,11 @@ h2 {
     transform: rotateY(180deg);
 }
 
-#quiz-cards .card:hover .card-front {
+#quiz-cards .card.is-flipped .card-front {
     transform: rotateY(-180deg);
 }
 
-#quiz-cards .card:hover .card-back {
+#quiz-cards .card.is-flipped .card-back {
     transform: rotateY(0deg);
 }
 
@@ -101,6 +102,20 @@ h2 {
 
 #progress-tracker {
     margin-top: 20px;
+}
+
+#progress-bar {
+    width: 100%;
+    background-color: #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+#progress {
+    height: 20px;
+    width: 0%;
+    background-color: #ff6f61;
+    transition: width 0.5s ease;
 }
 
 footer {
